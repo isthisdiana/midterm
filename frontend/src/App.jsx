@@ -90,7 +90,9 @@ function App() {
 
   return (
     <div>
-      <h1>React + Express REST API </h1>
+      <h1>React + Express REST API Practice Code</h1>
+      <h2> CRUD Operations </h2>
+      <h3>Diana F. Kamilan</h3>
       <input
         type="text"
         value={newItem}
