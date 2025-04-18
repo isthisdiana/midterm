@@ -35,7 +35,7 @@ function App() {
 export default App
 */
 
-import { useState, useEffect } from 'react';
+/* import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const API_URL = 'http://localhost:5000/api/items';
@@ -90,7 +90,10 @@ function App() {
 
   return (
     <div>
-      <h1>React + Express REST API </h1>
+      <h1>React + Express REST API 
+        Practice Code </h1>
+      <h2>CRUD Operations</h2>
+      <h3>Diana F. Kamilan</h3>
       <input
         type="text"
         value={newItem}
@@ -116,7 +119,20 @@ function App() {
   }
 
   export default App
-       
+*/
+
+import CertificateOfRegistration from './CertificateOfRegistration';
+
+function App() {
+  return (
+    <div>
+      <CertificateOfRegistration />
+    </div>
+  );
+}
+
+export default App;
+
 
 
 

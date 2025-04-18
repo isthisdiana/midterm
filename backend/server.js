@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const cors = require('cors');
 
 const app = express();
@@ -42,4 +42,48 @@ app.delete("/api/items/:id", (req, res) => {
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+*/
+
+const express = require('express');
+const cors = require('cors');
+const mysql = require('mysql2');
+
+const app = express();
+const PORT = 5000;
+
+app.use(cors());
+app.use(express.json());
+
+//  Update these values based on your MySQL server setup
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',        // <-- type your MySQL password if any
+  database: 'cor_system' // this should match the database name in your .sql file
+});
+
+// Check connection
+db.connect(err => {
+  if (err) {
+    console.error(' Database connection failed:', err);
+    return;
+  }
+  console.log(' Connected to MySQL Database');
+});
+
+// Example API - Get subjects
+app.get('/api/subjects', (req, res) => {
+  db.query('SELECT * FROM subjects', (err, results) => {
+    if (err) {
+      res.status(500).send('Error fetching subjects');
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(` Server running at http://localhost:${PORT}`);
 });
