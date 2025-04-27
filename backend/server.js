@@ -77,7 +77,8 @@ db.connect(err => {
 app.get('/api/subjects', (req, res) => {
   db.query('SELECT * FROM subjects', (err, results) => {
     if (err) {
-      res.status(500).send('Error fetching subjects');
+      res.status(500).send('Error fetching subjects'); 
+      
       return;
     }
     res.json(results);

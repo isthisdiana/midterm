@@ -54,6 +54,142 @@ const CertificateOfRegistration = () => {
     fetchItems();
   }, []);
 
+  const subjects = [
+    {
+      code: "DBMSLAB2",
+      title: "Database Mngmnt Lab2",
+      lec: 0,
+      lab: 1,
+      credit: 1,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "TH 06:00PM - 09:00PM",
+      faculty: "Carios, Emanie"
+    },
+    {
+      code: "DBMSLEC2",
+      title: "Database Mngmnt Lec2",
+      lec: 2,
+      lab: 0,
+      credit: 2,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "T 06:00PM - 08:00PM",
+      faculty: "Carlos, Emanie"
+    },
+    {
+      code: "GEELECCP",
+      title: "Business Correspondence",
+      lec: 0,
+      lab: 3,
+      credit: 3,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "TH 08:00AM - 11:00AM",
+      faculty: "Pardito, Ranilo"
+    },
+    {
+      code: "GEPEHEF2",
+      title: "Physical Education II",
+      lec: 2,
+      lab: 0,
+      credit: 2,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "W 07:00AM - 09:00AM",
+      faculty: "Barizo, Crisanto"
+    },
+    {
+      code: "INTHCILB",
+      title: "Human Computer Interaction Lab",
+      lec: 0,
+      lab: 1,
+      credit: 1,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "W 10:00AM - 01:00PM",
+      faculty: "Macasil, Ma. Jasmine Rose"
+    },
+    {
+      code: "INTHCILC",
+      title: "Human Computer Interaction Lec",
+      lec: 2,
+      lab: 0,
+      credit: 2,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "T 01:00PM - 03:00PM",
+      faculty: "Macasil, Ma. Jasmine Rose"
+    },
+    {
+      code: "IPATLAB1",
+      title: "Integrative Programming Lab",
+      lec: 0,
+      lab: 2,
+      credit: 2,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "TH 11:00AM - 02:00PM",
+      faculty: "San Jose, Dhani"
+    },
+    {
+      code: "IPATLECT",
+      title: "Integrative Programming Lec",
+      lec: 1,
+      lab: 0,
+      credit: 1,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "T 08:00AM - 10:00AM",
+      faculty: "San Jose, Dhani"
+    },
+    {
+      code: "NETWKLB1",
+      title: "Networking 1 (Laboratory)",
+      lec: 0,
+      lab: 1,
+      credit: 1,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "TH 03:00PM - 06:00PM",
+      faculty: "Almazan, Edmund"
+    },
+    {
+      code: "NETWKLC1",
+      title: "Networking 1 (Lecture)",
+      lec: 2,
+      lab: 0,
+      credit: 2,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "T 03:00PM - 05:00PM",
+      faculty: "Almazan, Edmund"
+    },
+    {
+      code: "WEBDVLB2",
+      title: "Web Development 2 Lab",
+      lec: 0,
+      lab: 1,
+      credit: 1,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "W 01:00PM - 04:00PM",
+      faculty: "Sison, Edgardo"
+    },
+    {
+      code: "WEBDVLC2",
+      title: "Web Development 2 Lec",
+      lec: 2,
+      lab: 0,
+      credit: 2,
+      tuition: "0",
+      section: "BSINFOTEC",
+      schedule: "T 11:00AM - 01:00PM",
+      faculty: "Sison, Edgardo"
+    },
+  ];
+  
+
   const handleSignatureUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -121,6 +257,53 @@ const CertificateOfRegistration = () => {
     paddingBottom: "90px",
   };
 
+  const inputStyle = {
+    border: "none",
+    background: "transparent",
+    width: "100%",
+    fontSize: "10px",
+    color: "black",
+    textAlign: "center",
+    padding: "2px",
+  };
+  
+  const cellStyle = {
+    fontFamily: "Arial, sans-serif",
+    fontSize: "12px",
+    color: "black",
+    border: "1px solid black",
+    textAlign: "center",
+    padding: "5px",
+    whiteSpace: "nowrap", // Prevents text wrapping
+    wordWrap: "break-word", // force wrap long words
+  };
+
+    const headerStyle = {
+    color: "black",
+    height: "0.3in",
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '12px',
+    fontWeight: "bold",
+    backgroundColor: "gray",
+    border: "1px solid black",
+    textAlign: "center",
+  };
+
+  const subjectTitleStyle = {
+    color: "black",
+    height: "0.3in",
+    fontFamily: "Arial, sans-serif",
+    fontSize: "10px",
+    fontWeight: "bold",
+    backgroundColor: "gray",
+    border: "1px solid black",
+    textAlign: "center",
+    wordWrap: "break-word",
+    whiteSpace: "normal",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  };
+  
 
   return (
 
@@ -141,11 +324,16 @@ const CertificateOfRegistration = () => {
               border: "1px solid black",
               borderCollapse: "collapse",
               fontFamily: "Arial, Helvetica, sans-serif",
-              width: "8in",
+              width: "100%",
               position: "relative",
               tableLayout: "fixed",
             }}
           >
+
+            
+            
+
+            
             <tbody>
               <tr>
                 <td colSpan={2} style={{ height: "0.1in", fontSize: "72.5%" }}>
@@ -176,10 +364,28 @@ const CertificateOfRegistration = () => {
               </tr>
               <tr>
 
-                <td colSpan={40} style={{ height: "0.5in", textAlign: "center" }}>
-                  <table width="100%" style={{ borderCollapse: "collapse" }}>
+                <td colSpan={40} 
+                style={{ 
+                  height: "0.5in", 
+                  textAlign: "center",
+                  wordWrap: "break-word",
+                  whiteSpace: "normal",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis"}}>
+
+                  <table 
+                  width="100%" 
+                  style={{ 
+                    borderCollapse: "collapse",
+                    tableLayout: "fixed",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                 }}>
                     <tbody>
                       <tr>
+                       
                        
 
                         <td style={{ width: "20%", textAlign: "center" }}>
@@ -808,14 +1014,21 @@ const CertificateOfRegistration = () => {
                   rowSpan={2}
                   style={{
                     color: "black",
-                    height: "0.3in",
+                    
                     fontFamily: 'Arial, sans-serif',
                     fontSize: '12px',
                     fontWeight: "bold",
+                    padding: "0px",
+                    borderWidth: "1px",
+                    margin: "0px",
 
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                   
                 > 
@@ -835,7 +1048,12 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
-                  }} 
+                    wordWrap: "break-word", 
+                    whiteSpace: "normal",   
+                    overflow: "hidden",     
+                    textOverflow: "ellipsis", 
+                  }}
+                  
                 >
                   SUBJECT TITLE
                 </td>
@@ -852,6 +1070,10 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   UNIT
@@ -870,6 +1092,10 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   SECTION
@@ -885,6 +1111,10 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   SCHEDULE/ROOM
@@ -903,6 +1133,10 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   FACULTY
@@ -918,6 +1152,10 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   Lec
@@ -932,6 +1170,10 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   Lab
@@ -945,6 +1187,10 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   Credit
@@ -958,12 +1204,16 @@ const CertificateOfRegistration = () => {
                     backgroundColor: "gray",
                     border: "1px solid black",
                     textAlign: "center",
+                    wordWrap: "break-word",
+                    whiteSpace: "normal",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   Tuition
                 </td>
               </tr>
-              {Array.from({ length: 12 }).map((_, index) => {  // change length for rows
+              {/* {Array.from({ length: 12 }).map((_, index) => {  // change length for rows
                 const item = filteredData[index] || {};
                 return (
                   <tr key={index}>
@@ -1160,7 +1410,35 @@ const CertificateOfRegistration = () => {
                     </td>
                   </tr>
                 );
-              })}
+              })} */}
+
+{/* {subjects.map((subject, index) => (
+  <tr key={index}>
+    <td><input type="text" value={subject.code} readOnly style={inputStyle} /></td>
+    <td><input type="text" value={subject.title} readOnly style={inputStyle} /></td>
+    <td><input type="text" value={subject.lec} readOnly style={inputStyle} /></td>
+    <td><input type="text" value={subject.lab} readOnly style={inputStyle} /></td>
+    <td><input type="text" value={subject.credit} readOnly style={inputStyle} /></td>
+    <td><input type="text" value={subject.tuition} readOnly style={inputStyle} /></td>
+    <td><input type="text" value={subject.section} readOnly style={inputStyle} /></td>
+    <td><input type="text" value={subject.schedule} readOnly style={inputStyle} /></td>
+    <td><input type="text" value={subject.faculty} readOnly style={inputStyle} /></td>
+  </tr>
+))} */}
+
+{subjects.map((subject, index) => (
+  <tr key={index}>
+    <td colSpan={8} style={cellStyle}>{subject.code}</td>
+    <td colSpan={8} style={cellStyle}>{subject.title}</td>
+    <td colSpan={1} style={cellStyle}>{subject.lec}</td>
+    <td colSpan={1} style={cellStyle}>{subject.lab}</td>
+    <td colSpan={1} style={cellStyle}>{subject.credit}</td>
+    <td colSpan={1} style={cellStyle}>{subject.tuition}</td>
+    <td colSpan={4} style={cellStyle}>{subject.section}</td>
+    <td colSpan={8} style={cellStyle}>{subject.schedule}</td>
+    <td colSpan={8} style={cellStyle}>{subject.faculty}</td>
+  </tr>
+))}
 
 
 
